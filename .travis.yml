@@ -1,0 +1,14 @@
+language: php
+
+php:
+    - 5.5
+
+env:
+    - HHVM=true
+    - HHVM=false
+
+before_install:
+    - if [[ "$HHVM" == true ]]  ; then sudo bin/install_hhvm; export SCRIPT=hhvm; fi
+    - if [[ "$HHVM" == false ]] ; then export SCRIPT=php; fi
+
+script: "$SCRIPT --version"
