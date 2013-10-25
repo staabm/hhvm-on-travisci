@@ -1,9 +1,12 @@
 HHVM on Travis-CI
 =================
 
+[![Build
+Status](https://travis-ci.org/willdurand/hhvm-on-travisci.png?branch=master)](https://travis-ci.org/willdurand/hhvm-on-travisci)
+
 Does your PHP project behave as expected on [HHVM](http://www.hiphop-php.com/)?
-If you are using [Travis-CI](https://travis-ci.org) to run your test suite, then
-**this** is for you!
+Do you want to give HHVM a try? If you are using [Travis-CI](https://travis-ci.org)
+to run your test suite, then **this** is for you!
 
 Here is how your `.travis.yml` file should look like:
 
@@ -39,9 +42,12 @@ before_install:
 script: "$SCRIPT"
 ```
 
+In the example above, it runs 4 jobs, but only 3 are useful: PHP 5.4, PHP 5.5
+and HHVM.
+
 **Note:** You need PHP 5.5 as Composer has a few issues while running on HHVM,
 so it is ok to install HHVM in a PHP 5.5 environment. It allows you to run
 Composer using PHP, and to run your test suite using HHVM.
 
 
-William
+William.
