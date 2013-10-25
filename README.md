@@ -49,5 +49,8 @@ and HHVM.
 so it is ok to install HHVM in a PHP 5.5 environment. It allows you to run
 Composer using PHP, and to run your test suite using HHVM.
 
+Here is a **real example**:
+[willdurand/JsonpCallbackValidator](https://github.com/willdurand/JsonpCallbackValidator/commit/b2250f22444b4660fc42357a753f7974024823b1).
+It takes less than one minute to install HHVM, so it is not that bad :)
 
 William.
