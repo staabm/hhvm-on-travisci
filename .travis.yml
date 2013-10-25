@@ -1,6 +1,7 @@
 language: php
 
 php:
+    - 5.4
     - 5.5
 
 env:
@@ -8,7 +9,9 @@ env:
     - HHVM=false
 
 before_install:
-    - if [[ "$HHVM" == true ]]  ; then sudo bin/install_hhvm; export SCRIPT=hhvm; fi
-    - if [[ "$HHVM" == false ]] ; then export SCRIPT=php; fi
+    - PHP_VERSION=`phpenv global`
+    - if [[ "$HHVM" == true && "5.5" == "$PHP_VERSION" ]] ; then sudo bin/install_hhvm; export SCRIPT="hhvm --version"; fi
+    - if [[ "$HHVM" == true && "5.5" != "$PHP_VERSION" ]] ; then export SCRIPT="exit"; fi
+    - if [[ "$HHVM" == false ]] ; then export SCRIPT="php --version"; fi
 
-script: "$SCRIPT --version"
+script: "$SCRIPT"
